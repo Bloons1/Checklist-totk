@@ -1,0 +1,819 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap');
+
+body {
+    font-family: 'IM Fell Great Primer SC', serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #ffd700; /* Gold */
+    margin-bottom: 10px;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.completion-summary {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left;
+    color: #eee;
+}
+
+.completion-summary p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.completion-summary span {
+    font-weight: bold;
+    color: #88ee88; /* Green for completion */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Common Styles for all main category groups */
+.category-group {
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    position: relative; /* Needed for absolute positioning of campfire */
+}
+
+.category-header {
+    background-color: #2e2e2e;
+    padding: 15px 20px;
+    cursor: pointer; /* Added for hand cursor */
+    font-size: 1.8em;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffd700; /* Gold color for main headers */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    border-radius: 8px;
+}
+
+/* Extreme Goals specific header styling (main header and sub-headers) */
+.extreme-goals-header,
+.extreme-goals-subcategory-header { /* Apply flame effect to all headers in this section */
+    background: linear-gradient(45deg, #8B0000, #FF4500, #8B0000); /* Dark Red to Orange */
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #FFD700; /* Gold border for emphasis */
+    z-index: 1; /* Ensure it's above other elements if needed */
+    cursor: pointer; /* Added for hand cursor */
+}
+
+/* Fire animation for Extreme Goals headers */
+.extreme-goals-header::before,
+.extreme-goals-subcategory-header::before { /* Apply to all headers in this section */
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 100, 0, 0.1),
+        rgba(255, 69, 0, 0.15) 10%,
+        rgba(255, 0, 0, 0.2) 20%
+    );
+    background-size: 200% 200%;
+    animation: fire-move 10s linear infinite;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 0; /* Keep behind text */
+}
+
+@keyframes fire-move {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; }
+}
+
+.extreme-goals-header span,
+.extreme-goals-subcategory-header span { /* Ensure text is above the animation */
+    position: relative;
+    z-index: 1;
+}
+
+
+/* If content is active, round only top corners of header */
+.category-content.active + .category-header,
+.category-header.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.category-header:hover {
+    background-color: #3d3d3d;
+}
+
+/* ANIMATION STYLES - Adjusted to ease-in-out for consistent speed */
+/* Simplified to only max-height for smoother transition */
+.category-content,
+.location-group-content,
+.korok-region-group-content,
+.exploration-category-group-content,
+.quest-category-group-content,
+.collection-category-group-content,
+.collection-subcategory-content,
+.armor-subcategory-content,
+.fabric-subcategory-content,
+.medals-subcategory-content,
+.horse-gear-subcategory-content
+{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out; /* ONLY max-height for smoother transition */
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    padding: 0 20px; /* Padding will be added by JS to ensure it's visible */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* NEW: Apply flame background to extreme goals content */
+.extreme-goals-content,
+.extreme-goals-category-group-content, /* For the "999 Items" content */
+.extreme-goals-subcategory-content /* For the Fruit, Mushroom, etc. content */
+{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background: linear-gradient(45deg, #2a0a0a, #4a1a00, #2a0a0a); /* Darker version of flame for content */
+    border-top: 1px solid #FFD700; /* Gold border */
+    padding: 0 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative; /* Needed for ::before pseudo-element */
+    z-index: 1; /* Ensure content is above the background flame */
+}
+
+.extreme-goals-content::before,
+.extreme-goals-category-group-content::before,
+.extreme-goals-subcategory-content::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 100, 0, 0.05), /* Lighter, more subtle flame for content */
+        rgba(255, 69, 0, 0.075) 10%,
+        rgba(255, 0, 0, 0.1) 20%
+    );
+    background-size: 200% 200%;
+    animation: fire-move 15s linear infinite reverse; /* Slower, reverse animation for content */
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.category-content.active,
+.location-group-content.active,
+.korok-region-group-content.active,
+.exploration-category-group-content.active,
+.quest-category-group-content.active,
+.collection-category-group-content.active,
+.collection-subcategory-content.active,
+.armor-subcategory-content.active,
+.fabric-subcategory-content.active,
+.medals-subcategory-content.active,
+.horse-gear-subcategory-content.active,
+.extreme-goals-content.active, /* Main extreme content */
+.extreme-goals-category-group-content.active, /* "999 Items" content */
+.extreme-goals-subcategory-content.active /* Fruit, Mushroom etc. content */
+{
+    max-height: 9999px; /* Sufficiently large to cover all content */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Common Styles for sub-dropdown headers */
+.location-group-header,
+.korok-region-group-header,
+.exploration-category-group-header,
+.quest-category-group-header,
+.collection-category-group-header,
+.armor-category-group-header,
+.fabric-category-group-header,
+.fabric-subcategory-header,
+.medals-category-group-header,
+.horse-gear-category-group-header
+{
+    cursor: pointer; /* Added for hand cursor */
+    background-color: #3a3a3a;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffd700;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Extreme Goals sub-header specific styling - now also has flame effect */
+.extreme-goals-subcategory-header {
+    /* Background and border are now handled by the .extreme-goals-header, .extreme-goals-subcategory-header rule above */
+    /* Keep specific font size and padding if different from main header */
+    font-size: 1.2em; /* Slightly smaller than main extreme header */
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px; /* Match main header radius */
+    cursor: pointer; /* Added for hand cursor */
+}
+
+.extreme-goals-header:hover,
+.extreme-goals-subcategory-header:hover {
+    filter: brightness(1.2); /* Slightly brighter on hover for flame headers */
+}
+
+
+.location-group-header:hover,
+.korok-region-group-header:hover,
+.exploration-category-group-header:hover,
+.quest-category-group-header:hover,
+.collection-category-group-header:hover,
+.armor-category-group-header:hover,
+.fabric-category-group-header:hover,
+.fabric-subcategory-header:hover,
+.medals-category-group-header:hover,
+.horse-gear-category-group-header:hover
+{
+    background-color: #4a4a4a;
+}
+
+/* Common Styles for completion counts in headers */
+.region-completion-count, .location-completion-count {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-left: 10px;
+}
+
+/* Specific Styles for Shrine & Lightroot Items */
+.item {
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3a3a3a;
+}
+
+.shrine-row, .lightroot-row, .shrine-treasure-row, .skyview-tower-label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.shrine-row:last-child, .lightroot-row:last-child, .shrine-treasure-row:last-child {
+    margin-bottom: 0;
+}
+
+.item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #ffd700; /* Gold checkbox color */
+}
+
+.shrine-name, .lightroot-name, .shrine-treasure-label, .skyview-tower-label {
+    flex-grow: 1;
+    color: #ccc;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Completed Shrine (Applies to the whole item block) */
+.item.completed-shrine .shrine-name {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Completed Lightroot (Applies to the whole item block) */
+.item.completed-lightroot .lightroot-name {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Completed Treasure (Applies to the whole item block) */
+.item.completed-treasure .shrine-treasure-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Completed Skyview Tower */
+.skyview-tower-label-container.completed-tower .skyview-tower-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Completion Medal (for Dispelling Darkness, Hestu's Gift) */
+.completion-medal-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #3a3a3a;
+}
+
+.completion-medal-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #ffd700; /* Gold checkbox color */
+}
+
+.completion-medal-label {
+    font-weight: bold;
+    color: #ffd700;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.completion-medal-item.completed-medal .completion-medal-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Korok-specific styles */
+.korok-subregion-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.korok-subregion-item:last-child {
+    border-bottom: none;
+}
+
+.korok-subregion-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.1);
+    accent-color: #88ee88;
+}
+
+.korok-subregion-label {
+    flex-grow: 1;
+    color: #ccc;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.korok-guide-link {
+    margin-left: 15px;
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.korok-guide-link:hover {
+    text-decoration: underline;
+}
+
+.korok-subregion-item.completed-korok-subregion .korok-subregion-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Specific Styles for Exploration & Locations items */
+.exploration-location-item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.exploration-location-item:last-child {
+    border-bottom: none;
+}
+
+.exploration-location-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.exploration-location-checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #ffd700;
+}
+
+.exploration-location-label {
+    flex-grow: 1;
+    font-size: 1.1em;
+    color: #ccc;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.bubbulfrog-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.bubbulfrog-checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #88ee88;
+}
+
+/* Completed state for primary location item */
+.exploration-location-item.completed-location .exploration-location-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Completed state for bubbulfrog checkbox */
+.exploration-location-item.completed-bubbulfrog .bubbulfrog-checkbox-container .bubbulfrog-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Style for the bolded "All 191 Cave Entrances" checkbox */
+.cave-entrance-total-item .exploration-location-label {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Specific styling for subcategories like "Towns & Settlements" within Exploration */
+.exploration-subcategory-group .exploration-category-group-header {
+    background-color: #4a4a4a;
+    font-size: 1.2em;
+    padding: 6px 10px;
+    margin-top: 8px;
+    border-radius: 4px;
+    color: #ffd700;
+}
+
+.exploration-subcategory-group .exploration-category-group-header:hover {
+    background-color: #5a5a5a;
+}
+
+.exploration-subcategory-group .exploration-category-group-content {
+    background-color: #3a3a3a;
+    padding: 3px 8px;
+}
+
+/* Quests Section Styles */
+.quest-category-group {
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quest-category-group-header {
+    background-color: #3a3a3a;
+    color: #ffd700;
+    padding: 10px 15px;
+    cursor: pointer; /* Added for hand cursor */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-bottom: 1px solid #555;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.quest-category-group-header:hover {
+    background-color: #4a4a4a;
+}
+
+.quest-category-group-header .region-completion-count {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-left: 10px;
+}
+
+.quest-category-group-content {
+    display: none;
+    padding: 10px 15px;
+    background-color: #2a2a2a;
+}
+
+.quest-category-group-content.active {
+    display: block;
+}
+
+.quest-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.quest-item:last-child {
+    border-bottom: none;
+}
+
+.quest-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #88ee88;
+    flex-shrink: 0;
+}
+
+.quest-label {
+    flex-grow: 1;
+    color: #eee;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.quest-location,
+.quest-associated-shrine {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-left: 10px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+/* Style for completed quests */
+.completed-quest .quest-label,
+.completed-quest .quest-location,
+.completed-quest .quest-associated-shrine {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* General styles for collection items */
+.collection-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.collection-item:last-child {
+    border-bottom: none;
+}
+
+.collection-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.1);
+    accent-color: #ffd700;
+}
+
+.collection-label {
+    flex-grow: 1;
+    color: #ccc;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.completed-collection-item .collection-label {
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+/* Styles for Armor and Fabric sections */
+.armor-item, .fabric-item, .medal-item, .horse-gear-item, .extreme-goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.armor-item:last-child, .fabric-item:last-child, .medal-item:last-child, .horse-gear-item:last-child, .extreme-goal-item:last-child {
+    border-bottom: none;
+}
+
+.armor-item input[type="checkbox"],
+.fabric-item input[type="checkbox"],
+.medal-item input[type="checkbox"],
+.horse-gear-item input[type="checkbox"],
+.extreme-goal-item input[type="checkbox"]
+{
+    margin-right: 10px;
+    transform: scale(1.1);
+    accent-color: #88ee88;
+}
+
+.armor-label, .fabric-label, .medal-label, .horse-gear-label, .extreme-goal-label {
+    flex-grow: 1;
+    color: #ccc;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.completed-armor .armor-label,
+.completed-fabric .fabric-label,
+.completed-medal-item .medal-label,
+.completed-horse-gear .horse-gear-label,
+.completed-extreme-goal .extreme-goal-label
+{
+    text-decoration: line-through;
+    color: rgba(120, 110, 90, 0.5);
+}
+
+.upgrade-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.upgrade-checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #ffd700;
+}
+
+.star-icon {
+    color: #ffd700;
+    font-size: 1.2em;
+    margin-right: 3px;
+}
+
+.fabric-obtainment {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-left: 15px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Campfire Animation Styles */
+.extreme-goals-group {
+    position: relative; /* Ensure this is relative for absolute positioning of campfire */
+    padding-top: 30px; /* Add space for the campfire above the header */
+}
+
+.campfire-container {
+    position: absolute;
+    top: -5px; /* Adjusted to be even closer to the header */
+    left: 0;
+    width: 100%;
+    height: 30px; /* Height of the campfire base */
+    overflow: hidden; /* Hide flames that go too far down */
+    z-index: 2; /* Ensure it's above the header's flame effect */
+    pointer-events: none; /* Allow clicks to pass through */
+    display: flex; /* Use flexbox to distribute flames */
+    justify-content: space-around; /* Distribute flames evenly */
+    align-items: flex-end; /* Align flames to the bottom of the container */
+}
+
+.flame {
+    position: relative; /* Changed to relative within flex container */
+    bottom: 0;
+    background: radial-gradient(circle at 50% 100%, #ffc107 0%, #ff5722 50%, #e62e00 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Flame shape */
+    opacity: 0;
+    animation: campfire-flicker 2s infinite ease-out;
+}
+
+/* Adjusted flame sizes and removed individual left positions for flex distribution */
+.flame-1 {
+    width: 15px;
+    height: 25px;
+    animation-delay: 0s;
+    animation-duration: 2s;
+}
+
+.flame-2 {
+    width: 20px;
+    height: 30px;
+    animation-delay: 0.3s;
+    animation-duration: 2.2s;
+}
+
+.flame-3 {
+    width: 18px;
+    height: 28px;
+    animation-delay: 0.6s;
+    animation-duration: 1.8s;
+}
+
+.flame-4 {
+    width: 12px;
+    height: 20px;
+    animation-delay: 0.9s;
+    animation-duration: 2.5s;
+}
+
+.flame-5 {
+    width: 16px;
+    height: 26px;
+    animation-delay: 1.2s;
+    animation-duration: 2.1s;
+}
+.flame-6 {
+    width: 14px;
+    height: 23px;
+    animation-delay: 0.1s;
+    animation-duration: 1.9s;
+}
+.flame-7 {
+    width: 19px;
+    height: 29px;
+    animation-delay: 0.4s;
+    animation-duration: 2.3s;
+}
+.flame-8 {
+    width: 17px;
+    height: 27px;
+    animation-delay: 0.7s;
+    animation-duration: 1.7s;
+}
+.flame-9 {
+    width: 13px;
+    height: 21px;
+    animation-delay: 1.0s;
+    animation-duration: 2.4s;
+}
+.flame-10 {
+    width: 15px;
+    height: 25px;
+    animation-delay: 1.3s;
+    animation-duration: 2.0s;
+}
+.flame-11 {
+    width: 16px;
+    height: 24px;
+    animation-delay: 0.2s;
+    animation-duration: 2.1s;
+}
+.flame-12 {
+    width: 21px;
+    height: 31px;
+    animation-delay: 0.5s;
+    animation-duration: 2.3s;
+}
+.flame-13 {
+    width: 19px;
+    height: 29px;
+    animation-delay: 0.8s;
+    animation-duration: 1.9s;
+}
+.flame-14 {
+    width: 14px;
+    height: 22px;
+    animation-delay: 1.1s;
+    animation-duration: 2.6s;
+}
+.flame-15 {
+    width: 17px;
+    height: 27px;
+    animation-delay: 1.4s;
+    animation-duration: 2.0s;
+}
+
+
+@keyframes campfire-flicker {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+        filter: brightness(0.8);
+    }
+    20% {
+        transform: translateY(-5px) scale(1.1);
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+    40% {
+        transform: translateY(-10px) scale(0.9);
+        opacity: 0.8;
+        filter: brightness(1.0);
+    }
+    60% {
+        transform: translateY(-15px) scale(1.2);
+        opacity: 1;
+        filter: brightness(1.3);
+    }
+    80% {
+        transform: translateY(-20px) scale(0.8);
+        opacity: 0.5;
+        filter: brightness(0.9);
+    }
+    100% {
+        transform: translateY(-25px) scale(0.6);
+        opacity: 0;
+        filter: brightness(0.7);
+    }
+}
