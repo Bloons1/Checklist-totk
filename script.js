@@ -298,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Bottomless Cave" },
                 // Central Hyrule and Hyrule Field (13)
                 { name: "Royal Hidden Passage" },
-                { name: "Passeri Greenbelt Cave" },
                 { name: "Ranch Ruins Cave" },
                 { name: "Sage Temple Cave" },
                 { name: "Ancient Tree Stump Cave" },
