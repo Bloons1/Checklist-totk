@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Great Plateau Foothill Cave" },
                 { name: "Shrine of Resurrection Cave" },
                 { name: "River of the Dead Waterfall Cave" },
+                { name: "Passeri Greenbelt Cave" }, // Added
                 // Hebra, Tabantha, and Hyrule Ridge (27)
                 { name: "North Hyrule Plain Cave" },
                 { name: "Lindor's Brow Cave" },
@@ -688,6 +689,162 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Great Fairy Mija" },
                 { name: "Horse God Malanya" }
             ]
+        },
+        // NEW: Hyrule Compendium Category
+        {
+            category: "Hyrule Compendium",
+            subcategories: [
+                {
+                    name: "Creatures",
+                    items: [
+                        "001 Horse", "002 Giant Horse", "003 White Horse", "004 Giant White Stallion", "005 Golden Horse",
+                        "006 Stalhorse", "007 Donkey", "008 Sand Seal", "009 Patricia", "010 Bushy-Tailed Squirrel",
+                        "011 Woodland Boar", "012 Red-Tusked Boar", "013 Mountain Goat", "014 White Goat",
+                        "015 Mountain Buck", "016 Mountain Doe", "017 Water Buffalo", "018 Hateno Cow",
+                        "019 Highland Sheep", "020 Grassland Fox", "021 Snowcoat Fox", "022 Maraudo Wolf",
+                        "023 Wasteland Coyote", "024 Cold-Footed Wolf", "025 Tabantha Moose", "026 Dondon",
+                        "027 Honeyvore Bear", "028 Grizzlemaw Bear", "029 Hylian Retriever", "030 Blupee",
+                        "031 Bubbulfrog", "032 Common Sparrow", "033 Red Sparrow", "034 Blue Sparrow",
+                        "035 Rainbow Sparrow", "036 Sand Sparrow", "037 Golden Sparrow", "038 Wood Pigeon",
+                        "039 Rainbow Pigeon", "040 Hotfeather Pigeon", "041 White Pigeon", "042 Accented Pigeon",
+                        "043 Mountain Crow", "044 Bright-Chested Duck", "045 Blue-Winged Heron", "046 Pink Heron",
+                        "047 Islander Hawk", "048 Seagull", "049 Cloud Seagull", "050 Eldin Ostrich",
+                        "051 Forest Ostrich", "052 Cucco", "053 Hyrule Bass", "054 Hearty Bass",
+                        "055 Staminoka Bass", "056 Hearty Salmon", "057 Chillfin Trout", "058 Sizzlefin Trout",
+                        "059 Voltfin Trout", "060 Stealthfin Trout", "061 Mighty Carp", "062 Armored Carp",
+                        "063 Sanke Carp", "064 Ancient Arowana", "065 Glowing Cave Fish", "066 Mighty Porgy",
+                        "067 Armored Porgy", "068 Sneaky River Snail", "069 Razorclaw Crab", "070 Ironshell Crab",
+                        "071 Bright-Eyed Crab", "072 Fairy", "073 Winterwing Butterfly", "074 Summerwing Butterfly",
+                        "075 Thunderwing Butterfly", "076 Smotherwing Butterfly", "077 Cold Darner", "078 Warm Darner",
+                        "079 Electric Darner", "080 Restless Cricket", "081 Bladed Rhino Beetle", "082 Rugged Rhino Beetle",
+                        "083 Energetic Rhino Beetle", "084 Sunset Firefly", "085 Deep Firefly", "086 Hot-Footed Frog",
+                        "087 Tireless Frog", "088 Sticky Frog", "089 Hightail Lizard", "090 Hearty Lizard",
+                        "091 Fireproof Lizard", "092 Sticky Lizard"
+                    ]
+                },
+                {
+                    name: "Monsters",
+                    items: [
+                        "093 Chuchu", "094 Fire Chuchu", "095 Ice Chuchu", "096 Electric Chuchu", "097 Keese",
+                        "098 Fire Keese", "099 Ice Keese", "100 Electric Keese", "101 Water Octorok", "102 Forest Octorok",
+                        "103 Rock Octorok", "104 Snow Octorok", "105 Treasure Octorok", "106 Fire Wizzrobe",
+                        "107 Ice Wizzrobe", "108 Electric Wizzrobe", "109 Meteo Wizzrobe", "110 Blizzrobe",
+                        "111 Thunder Wizzrobe", "112 Like Like", "113 Fire Like", "114 Ice Like",
+                        "115 Shock Like", "116 Rock Like", "117 Evermean", "118 Aerocuda",
+                        "119 Gibdo", "120 Moth Gibdo", "121 Bokoblin", "122 Blue Bokoblin",
+                        "123 Black Bokoblin", "124 Stalkoblin", "125 Silver Bokoblin", "126 Boss Bokoblin",
+                        "127 Blue Boss Bokoblin", "128 Black Boss Bokoblin", "129 Silver Boss Bokoblin", "130 Moblin",
+                        "131 Blue Moblin", "132 Black Moblin", "133 Stalmoblin", "134 Silver Moblin",
+                        "135 Lizalfos", "136 Blue Lizalfos", "137 Black Lizalfos", "138 Stalizalfos",
+                        "139 Fire-Breath Lizalfos", "140 Ice-Breath Lizalfos", "141 Electric Lizalfos", "142 Silver Lizalfos",
+                        "143 Horriblin", "144 Blue Horriblin", "145 Black Horriblin", "146 Silver Horriblin",
+                        "147 Lynel", "148 Blue-Maned Lynel", "149 White-Maned Lynel", "150 Silver Lynel",
+                        "151 Soldier Construct I", "152 Soldier Construct II", "153 Soldier Construct III", "154 Soldier Construct IV",
+                        "155 Captain Construct I", "156 Captain Construct II", "157 Captain Construct III", "158 Captain Construct IV",
+                        "159 Training Construct", "160 Flux Construct I", "161 Flux Construct II", "162 Flux Construct III",
+                        "163 Yiga Footsoldier", "164 Yiga Blademaster", "165 Master Kohga", "166 Stone Pebblit",
+                        "167 Igneo Pebblit", "168 Frost Pebblit", "169 Stone Talus", "170 Stone Talus (Luminous)",
+                        "171 Stone Talus (Rare)", "172 Battle Talus", "173 Igneo Talus", "174 Frost Talus",
+                        "175 Hinox", "176 Blue Hinox", "177 Black Hinox", "178 Stalnox",
+                        "179 Molduga", "180 Flame Gleeok", "181 Frost Gleeok", "182 Thunder Gleeok",
+                        "183 King Gleeok", "184 Little Frox", "185 Frox", "186 Obsidian Frox",
+                        "187 Blue-White Frox", "188 Dinraal", "189 Naydra", "190 Farosh",
+                        "191 Colgera", "192 Moragia", "193 Marbled Gohma", "194 Sludge Like",
+                        "195 Mucktorok", "196 Queen Gibdo", "197 Seized Construct", "198 Phantom Ganon",
+                        "199 Demon King Ganondorf", "200 Demon King Ganondorf (2nd Form)", "201 Demon Dragon", "202 Light Dragon"
+                    ]
+                },
+                {
+                    name: "Materials",
+                    items: [
+                        "203 Apple", "204 Golden Apple", "205 Palm Fruit", "206 Wildberry", "207 Hylian Tomato",
+                        "208 Hydromelon", "209 Spicy Pepper", "210 Voltfruit", "211 Fleet-Lotus Seeds", "212 Mighty Bananas",
+                        "213 Fire Fruit", "214 Ice Fruit", "215 Splash Fruit", "216 Shock Fruit", "217 Dazzlefruit",
+                        "218 Hylian Shroom", "219 Sky Shroom", "220 Endura Shroom", "221 Stamella Shroom", "222 Hearty Truffle",
+                        "223 Big Hearty Truffle", "224 Chillshroom", "225 Sunshroom", "226 Zapshroom", "227 Rushroom",
+                        "228 Razorshroom", "229 Ironshroom", "230 Silent Shroom", "231 Brightcap", "232 Puffshroom",
+                        "233 Hyrule Herb", "234 Stambulb", "235 Hearty Radish", "236 Big Hearty Radish", "237 Cool Safflina",
+                        "238 Warm Safflina", "239 Electric Safflina", "240 Swift Carrot", "241 Endura Carrot", "242 Fortified Pumpkin",
+                        "243 Sun Pumpkin", "244 Swift Violet", "245 Mighty Thistle", "246 Armoranth", "247 Blue Nightshade",
+                        "248 Sundelion", "249 Brightbloom Seed", "250 Giant Brightbloom Seed", "251 Muddle Bud", "252 Bomb Flower",
+                        "253 Silent Princess", "254 Courser Bee Honey", "255 Hylian Pine Cone", "256 Korok Frond", "257 Chuchu Jelly",
+                        "258 Red Chuchu Jelly", "259 White Chuchu Jelly", "260 Yellow Chuchu Jelly", "261 Keese Eyeball",
+                        "262 Fire Keese Eyeball", "263 Ice Keese Eyeball", "264 Electric Keese Eyeball", "265 Like Like Stone",
+                        "266 Fire Like Stone", "267 Ice Like Stone", "268 Shock Like Stone", "269 Aerocuda Eyeball",
+                        "270 Gibdo Bone", "271 Bokoblin Horn", "272 Blue Bokoblin Horn", "273 Black Bokoblin Horn",
+                        "274 Silver Bokoblin Horn", "275 Boss Bokoblin Horn", "276 Blue Boss Bokoblin Horn", "277 Black Boss Bokoblin Horn",
+                        "278 Silver Boss Bokoblin Horn", "279 Moblin Horn", "280 Blue Moblin Horn", "281 Black Moblin Horn",
+                        "282 Silver Moblin Horn", "283 Lizalfos Horn", "284 Blue Lizalfos Horn", "285 Black Lizalfos Horn",
+                        "286 Fire-Breath Lizalfos Horn", "287 Ice-Breath Lizalfos Horn", "288 Electric Lizalfos Horn", "289 Silver Lizalfos Horn",
+                        "290 Horriblin Horn", "291 Blue Horriblin Horn", "292 Black Horriblin Horn", "293 Silver Horriblin Horn",
+                        "294 Lynel Saber Horn", "295 Lynel Mace Horn", "296 Blue-Maned Lynel Saber Horn", "297 Blue-Maned Lynel Mace Horn",
+                        "298 White-Maned Lynel Saber Horn", "299 White-Maned Lynel Mace Horn", "300 Silver Lynel Saber Horn", "301 Silver Lynel Mace Horn",
+                        "302 Soldier Construct Horn", "303 Soldier Construct II Horn", "304 Soldier Construct III Horn", "305 Soldier Construct IV Horn",
+                        "306 Captain Construct I Horn", "307 Captain Construct II Horn", "308 Captain Construct III Horn", "309 Captain Construct IV Horn",
+                        "310 Hinox Horn", "311 Blue Hinox Horn", "312 Black Hinox Horn", "313 Stalnox Horn",
+                        "314 Molduga Jaw", "315 Gleeok Flame Horn", "316 Gleeok Frost Horn", "317 Gleeok Thunder Horn",
+                        "318 Frox Fang", "319 Obsidian Frox Fang", "320 Blue-White Frox Fang", "321 Dinraal's Horn",
+                        "322 Shard of Dinraal's Spike", "323 Naydra's Horn", "324 Shard of Naydra's Spike", "325 Farosh's Horn",
+                        "326 Shard of Farosh's Spike", "327 Light Dragon's Horn", "328 Shard of Light Dragon's Spike"
+                    ]
+                },
+                {
+                    name: "Equipment",
+                    items: [
+                        "329 Master Sword", "330 Tree Branch", "331 Torch", "332 Soup Ladle", "333 Boomerang",
+                        "334 Boomerang ✨", "335 Sea-Breeze Boomerang", "336 Traveler's Sword", "337 Traveler's Sword ✨",
+                        "338 Soldier's Broadsword", "339 Soldier's Broadsword ✨", "340 Knight's Broadsword", "341 Knight's Broadsword ✨",
+                        "342 Royal Broadsword", "343 Royal Broadsword ✨", "344 Forest Dweller's Sword", "345 Forest Dweller's Sword ✨",
+                        "346 Zora Sword", "347 Zora Sword ✨", "348 Feathered Edge", "349 Feathered Edge ✨",
+                        "350 Gerudo Scimitar", "351 Gerudo Scimitar ✨", "352 Scimitar of the Seven", "353 Eightfold Blade",
+                        "354 Eightfold Blade ✨", "355 Rusty Broadsword", "356 Sword of the Hero", "357 Royal Guard's Sword",
+                        "358 Royal Guard's Sword ✨", "359 White Sword of the Sky", "360 Wooden Stick", "361 Sturdy Wooden Stick",
+                        "362 Gnarled Wooden Stick", "363 Lizal Boomerang", "364 Zonaite Sword", "365 Strong Zonaite Sword",
+                        "366 Mighty Zonaite Sword", "367 Magic Rod", "368 Bokoblin Arm", "369 Lizalfos Arm",
+                        "370 Gloom Sword", "371 Farming Hoe", "372 Boat Oar", "373 Giant Boomerang",
+                        "374 Giant Boomerang ✨", "375 Traveler's Claymore", "376 Traveler's Claymore ✨", "377 Soldier's Claymore",
+                        "378 Soldier's Claymore ✨", "379 Knight's Claymore", "380 Knight's Claymore ✨", "381 Royal Claymore",
+                        "382 Royal Claymore ✨", "383 Zora Longsword", "384 Zora Longsword ✨", "385 Cobble Crusher",
+                        "386 Cobble Crusher ✨", "387 Boulder Breaker", "388 Biggoron's Sword", "389 Gerudo Claymore",
+                        "390 Gerudo Claymore ✨", "391 Eightfold Longblade", "392 Eightfold Longblade ✨", "393 Dusk Claymore",
+                        "394 Fierce Deity Sword", "395 Rusty Claymore", "396 Royal Guard's Claymore", "397 Royal Guard's Claymore ✨",
+                        "398 Thick Stick", "399 Sturdy Thick Stick", "400 Gnarled Thick Stick", "401 Zonaite Longsword",
+                        "402 Strong Zonaite Longsword", "403 Mighty Zonaite Longsword", "404 Magic Scepter", "405 Moblin Arm",
+                        "406 Gloom Club", "407 Wooden Mop", "408 Farmer's Pitchfork", "409 Fishing Harpoon",
+                        "410 Throwing Spear", "411 Throwing Spear ✨", "412 Traveler's Spear", "413 Traveler's Spear ✨",
+                        "414 Soldier's Spear", "415 Soldier's Spear ✨", "416 Knight's Halberd", "417 Knight's Halberd ✨",
+                        "418 Royal Halberd", "419 Royal Halberd ✨", "420 Forest Dweller's Spear", "421 Forest Dweller's Spear ✨",
+                        "422 Zora Spear", "423 Zora Spear ✨", "424 Lightscale Trident", "425 Feathered Spear",
+                        "426 Feathered Spear ✨", "427 Gerudo Spear", "428 Gerudo Spear ✨", "429 Rusty Halberd",
+                        "430 Royal Guard's Spear", "431 Royal Guard's Spear ✨", "432 Long Stick", "433 Sturdy Long Stick",
+                        "434 Gnarled Long Stick", "435 Zonaite Spear", "436 Strong Zonaite Spear", "437 Mighty Zonaite Spear",
+                        "438 Magic Staff", "439 Gloom Spear", "440 Arrow", "441 Old Wooden Bow",
+                        "442 Wooden Bow", "443 Traveler's Bow", "444 Soldier's Bow", "445 Knight's Bow",
+                        "446 Royal Bow", "447 Forest Dweller's Bow", "448 Zora Bow", "449 Swallow Bow",
+                        "450 Falcon Bow", "451 Great Eagle Bow", "452 Gerudo Bow", "453 Phrenic Bow",
+                        "454 Royal Guard's Bow", "455 Dusk Bow", "456 Boko Bow", "457 Spiked Boko Bow",
+                        "458 Dragonbone Boko Bow", "459 Lizal Bow", "460 Strengthened Lizal Bow", "461 Steel Lizal Bow",
+                        "462 Lynel Bow", "463 Mighty Lynel Bow", "464 Savage Lynel Bow", "465 Duplex Bow",
+                        "466 Construct Bow", "467 Strong Construct Bow", "468 Mighty Construct Bow", "469 Zonaite Bow",
+                        "470 Demon King's Bow", "471 Hylian Shield", "472 Pot Lid", "473 Old Wooden Shield",
+                        "474 Wooden Shield", "475 Emblazoned Shield", "476 Hunter's Shield", "477 Fisherman's Shield",
+                        "478 Traveler's Shield", "479 Soldier's Shield", "480 Knight's Shield", "481 Royal Shield",
+                        "482 Forest Dweller's Shield", "483 Zora Shield", "484 Kite Shield", "485 Gerudo Shield",
+                        "486 Radiant Shield", "487 Daybreaker", "488 Shield of the Mind's Eye", "489 Sea-Breeze Shield",
+                        "490 Rusty Shield", "491 Royal Guard's Shield", "492 Boko Shield", "493 Spiked Boko Shield",
+                        "494 Dragonbone Boko Shield", "495 Lizal Shield", "496 Reinforced Lizal Shield", "497 Steel Lizal Shield",
+                        "498 Zonaite Shield", "499 Strong Zonaite Shield", "500 Mighty Zonaite Shield", "501 Lynel Shield",
+                        "502 Mighty Lynel Shield", "503 Savage Lynel Shield"
+                    ]
+                },
+                {
+                    name: "Treasure",
+                    items: [
+                        "504 Treasure Chest", "505 Ore Deposit", "506 Rare Ore Deposit", "507 Luminous Stone Deposit", "508 Zonaite Deposit",
+                        "509 Well"
+                    ]
+                }
+            ]
         }
     ];
 
@@ -909,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "The South Lomei Prophecy", location: "South Lomei Labyrinth - Gerudo Desert" },
                 { name: "The Tarrey Town Race is On!", location: "Hudson Construction Site - Akkala" },
                 { name: "The Treasure Hunters", location: "Rauru Hillside - Hyrule Field" },
-                { name: "The Ultimate Dish?", location: "Rikokoa Hills Well - Lanayru Wetlands" },
+                { name: "The Ultimate Dish?", location: "Rikoka Hills Well - Lanayru Wetlands" },
                 { name: "To the Ruins!", location: "Gerudo Town (After completing Riju of Gerudo Town)" },
                 { name: "Today's Menu", location: "Lookout Landing" },
                 { name: "Treasure of the Gerudo Desert", location: "Gerudo Town (After completing Riju of Gerudo Town)" },
@@ -1177,7 +1334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Towing Harness", id: "towing-harness" }
     ];
 
-    // NEW: Extreme Goals Data (Revised Structure)
+    // Extreme Goals Data (Revised Structure)
     const extremeGoalsMasterData = [
         {
             category: "999 Items", // New top-level category for extreme goals
@@ -1232,7 +1389,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Chillfin Trout", "Sizzlefin Trout", "Voltfin Trout", "Stealthfin Trout",
                         "Mighty Carp", "Armored Carp", "Sanke Carp", "Ancient Arowana",
                         "Glowing Cave Fish", "Mighty Porgy", "Armored Porgy", "Sneaky River Snail",
-                        "Razorclaw Crap", "Ironshell Crab", "Bright-Eyed Crab"
+                        "Razorclaw Crab", "Ironshell Crab", "Bright-Eyed Crab"
                     ]
                 },
                 {
@@ -1447,6 +1604,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalLocationsCount = 0;
         let completedBubbulfrogsCount = 0;
         let totalBubbulfrogsCount = 0;
+        let completedCompendiumItems = 0; // New counter for compendium
+        let totalCompendiumItems = 0; // New total for compendium
 
         explorationLocationsData.forEach(categoryGroup => {
             const categoryHeaderId = `${categoryGroup.category.replace(/\s+/g, '')}-exploration-category-header`;
@@ -1457,11 +1616,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (categoryGroup.subcategories) {
                 categoryGroup.subcategories.forEach(subCategory => {
                     subCategory.items.forEach(item => {
+                        // Determine the item name based on whether it's a string or an object
+                        const itemName = typeof item === 'object' && item !== null && item.name ? item.name : item;
+
                         totalCategoryCount++;
-                        const itemId = `${categoryGroup.category.replace(/\s+/g, '')}-${subCategory.name.replace(/\s+/g, '')}-${item.name.replace(/\s+/g, '')}`.replace(/[^\w-]/g, '');
+                        const itemId = `${categoryGroup.category.replace(/\s+/g, '')}-${subCategory.name.replace(/\s+/g, '')}-${itemName.replace(/\s+/g, '')}`.replace(/[^\w-]/g, '');
                         if (localStorage.getItem(itemId) === 'true') {
                             completedLocationsCount++;
                             currentCategoryCount++;
+                        }
+                        // If it's a compendium item, add to compendium specific counts
+                        if (categoryGroup.category === "Hyrule Compendium") {
+                            totalCompendiumItems++;
+                            if (localStorage.getItem(itemId) === 'true') {
+                                completedCompendiumItems++;
+                            }
                         }
                     });
                 });
@@ -1503,6 +1672,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const currentTownsSettlements = Array.from(document.querySelectorAll(`input[id^="${categoryGroup.category.replace(/\s+/g, '')}-${categoryGroup.subcategories[0].name.replace(/\s+/g, '')}"]`)).filter(cb => cb.checked).length;
                         const currentStables = Array.from(document.querySelectorAll(`input[id^="${categoryGroup.category.replace(/\s+/g, '')}-${categoryGroup.subcategories[1].name.replace(/\s+/g, '')}"]`)).filter(cb => cb.checked).length;
                         categoryCountSpan.textContent = `(${currentTownsSettlements}/${totalTownsSettlements} Towns/Settlements, ${currentStables}/${totalStables} Stables)`;
+                    } else if (categoryGroup.category === "Hyrule Compendium") {
+                        categoryCountSpan.textContent = `(${completedCompendiumItems}/${totalCompendiumItems} Entries)`;
                     }
                     else {
                         categoryCountSpan.textContent = `(${currentCategoryCount}/${totalCategoryCount} Items)`;
@@ -1521,7 +1692,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 totalExpectedExplorationItems += categoryGroup.items.length;
             }
         });
-        totalExpectedExplorationItems += 1;
+        totalExpectedExplorationItems += 1; // For the "All 191 Cave Entrances" checkbox
 
         explorationLocationsCountSpan.textContent = `${completedLocationsCount}/${totalExpectedExplorationItems} Locations`;
 
@@ -1822,6 +1993,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         extremeGoalsCountSpan.textContent = `${completedExtremeGoals}/${totalExtremeGoals} Complete`;
     }
+
 
     // Function to render shrines and lightroots
     function renderShrineLightroots() {
@@ -2198,13 +2370,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const checkbox = document.createElement('input');
                         checkbox.type = 'checkbox';
-                        const itemId = `${categoryGroup.category.replace(/\s+/g, '')}-${subCategory.name.replace(/\s+/g, '')}-${item.name.replace(/\s+/g, '')}`.replace(/[^\w-]/g, '');
+
+                        // Determine the item name based on whether it's a string or an object
+                        const itemName = typeof item === 'object' && item !== null && item.name ? item.name : item;
+
+                        // For compendium, ID should include category and subcategory
+                        const itemId = `${categoryGroup.category.replace(/\s+/g, '')}-${subCategory.name.replace(/\s+/g, '')}-${itemName.replace(/\s+/g, '')}`.replace(/[^\w-]/g, '');
                         checkbox.id = itemId;
                         checkbox.checked = localStorage.getItem(itemId) === 'true';
 
                         const label = document.createElement('span');
                         label.classList.add('exploration-location-label');
-                        label.textContent = item.name;
+                        label.textContent = itemName; // Use itemName for textContent
 
                         mainCheckboxGroup.appendChild(checkbox);
                         mainCheckboxGroup.appendChild(label);
