@@ -485,7 +485,7 @@ body {
     margin-bottom: 10px;
     border: 1px solid #444;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .quest-category-group-header {
